@@ -1,0 +1,13 @@
+.btn{
+    width:90px;
+     height:40px;
+      border-radius:10px;
+      color:white;
+      background-color:inherit;
+      border:1px solid white;
+      cursor: pointer;
+      font-weight: 550;
+}
+.btn:hover{
+    background-color: rgb(245, 193, 96);
+}

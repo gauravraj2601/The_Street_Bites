@@ -1,0 +1,12 @@
+
+.sliding_div{
+    background-image: url('../Images/sliding.png');
+  background-size: cover; /* Adjust as needed, e.g., 'contain', '100% 100%', etc. */
+  background-repeat: repeat; 
+}
+.sliding_div div{
+    height: 100%;
+}
+*{
+    /* font-family: Josefin Sans, Arial,sans-s; */
+}
