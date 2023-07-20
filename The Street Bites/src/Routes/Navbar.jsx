@@ -24,3 +24,6 @@ const Navbar = () => {
 };
 // alignItems: 'center', justifyContent: 'space-around'
 export default Navbar;
+
+
+
