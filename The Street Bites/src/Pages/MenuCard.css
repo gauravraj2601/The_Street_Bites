@@ -1,0 +1,6 @@
+.container{
+    color:white;
+    background-image: url('http://www.thestreetbites.com/images/bg_4.jpg');
+  background-size: cover; /* Adjust as needed, e.g., 'contain', '100% 100%', etc. */
+  background-repeat: repeat; 
+}

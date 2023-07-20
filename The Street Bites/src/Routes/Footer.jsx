@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import { FaFacebook } from 'react-icons/fa';
+import { FaFacebook,FaTruck  } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
@@ -14,6 +14,11 @@ const Footer = () => {
             <FaFacebook size={32} color="#4e6a94"  />       
              <FaInstagram size={32} color="#C13584" />
             </div>
+            <div style={{ display: 'flex', alignItems: 'center',marginTop:"15px" }}>
+            <FaTruck size={24} color="white" opacity=".9"         style={{ transform: 'scaleX(-1) rotate(0deg)' }}
+/>
+        <span style={{ marginLeft: '10px' }}>+38 (063) 987-45-615</span>
+      </div>
         
         </div>
         <div style={{width:"50%"}}><h4>HAVE A QUESTIONS?</h4>

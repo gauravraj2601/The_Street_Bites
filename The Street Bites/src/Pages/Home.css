@@ -7,6 +7,7 @@
 .sliding_div div{
     height: 100%;
 }
-*{
-    /* font-family: Josefin Sans, Arial,sans-s; */
+    /* font-family: Josefin Sans, Arial,sans-s;  '../Images/sliding.png' */
+#crunchy{
+    font-family: "Nothing You Could Do", cursive;
 }
