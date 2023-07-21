@@ -41,10 +41,11 @@ const Card = () => {
         }
     ]
   return (
-    <div style={{display:"grid", gridTemplateColumns:"repeat(4,1fr)",width:"90%", margin:"auto",gap:"20px",marginTop:"15px" }}>
+    <div style={{display:"grid", gridTemplateColumns:"repeat(4,1fr)",width:"90%", margin:"auto",gap:"20px",marginTop:"15px", }}>
+
         {menuCard.map((el,index)=>{
             return(
-               <Link to={`/menu/${index+1}`} style={{textDecoration:"none",fontFamily:"Graphik, sans-serif",color:"#e45c12", fontSize:"28px",fontWeight:"bold",display:"flex",}}>
+               <Link to={`/menu/${index+1}`} style={{textDecoration:"none",fontFamily:"cursive",color:"#ffd12e", fontSize:"38px",fontWeight:"bold",display:"flex",}}>
                 
                 <div style={{width:"270px", height:"270px",
                          backgroundImage: `url(${el.img})`,
@@ -54,7 +55,8 @@ const Card = () => {
                          display:"flex",
                          justifyContent:"center",
                          alignItems:'flex-end',
-                         fontFamily:"serif"
+                         fontFamily:"cursive",
+                         
                         }} key={index} >{el.name}</div>
                 </Link>
             )

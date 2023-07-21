@@ -53,7 +53,7 @@ const Home = () => {
       />
         </div>
         <div style={{color:"white"}}>
-            <h1 style={{fontFamily:"Nothing You Could Do, cursive", color:"#c79b53"}}>Delicious</h1>
+            <h1 style={{fontFamily:"Nothing You Could Do, cursive", color:"#fac564"}}>Delicious</h1>
         <h1>BURGERS</h1>
         <p style={{}}>Tasty Amazing Burgers</p>
         <Button btnText={"View Menu"}  buttonClick={()=>navigate("/menu")}/>
@@ -63,8 +63,8 @@ const Home = () => {
       
       <div style={{width:"40",height:"350px",display:"flex", border:"2px solid green",margin:"auto",alignItems:"center",justifyContent:"center", opacity: currentImageIndex % 2 === 0 ? 0 : 1,}}>
 
-        <div style={{marginTop:"20px", color:"white"}}>
-            <h1 style={{fontFamily:"Nothing You Could Do, cursive", color:"#c79b53"}}>Crunchy</h1>
+        <div id="crunchy" style={{marginTop:"20px", color:"white"}}>
+            <h1 style={{color:"#fac564"}}>Crunchy</h1>
         <h1>PIZZA'S</h1>
         <p>Tasty Amazing Pizza's</p>
         <Button btnText={"View Menu"} buttonClick={()=>navigate("/menu")} />
