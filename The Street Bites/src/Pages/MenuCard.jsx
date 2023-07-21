@@ -2,6 +2,11 @@ import React from "react";
 import { FaPhone } from "react-icons/fa";
 import "./MenuCard.css";
 import menu1 from '../Images/menu1.png';
+import menu2 from '../Images/menu2.png';
+import menu3 from '../Images/menu3.png';
+import menu4 from '../Images/menu4.png';
+
+
 
 const MenuCard = () => {
   return (
@@ -38,13 +43,13 @@ const MenuCard = () => {
             </div>
             
             <div style={{boxShadow: "red 0px 20px 30px -10px", width:"520px", height:"730px"}}>
-                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu1} alt="" /></div>
+                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu2} alt="" /></div>
             </div>
             <div style={{ width:"520px", height:"730px",boxShadow: "red 0px 20px 30px -10px"}}>
-                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu1} alt="" /></div>
+                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu3} alt="" /></div>
             </div>
             <div style={{ width:"520px", height:"730px",boxShadow: "red 0px 20px 30px -10px"}}>
-                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu1} alt="" /></div>
+                <div style={{backgroundColor:"black",width:"515px", height:"725px", margin:"auto"}}><img style={{width:"510px", height:"720px", margin:"auto"}} src={menu4} alt="" /></div>
             </div>
 
             <div></div>

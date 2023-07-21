@@ -68,7 +68,7 @@ const DishCard = ({image,category,dishName,prices, details}) => {
           style={{
             position: "static",
             fontWeight: "bold",
-            color: "#585F70",
+            color: "#ffd12e",
             margin: "auto",
           }}
         >
