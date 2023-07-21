@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import logo from '../Images/logo.png';
 import "./Navbar.css"
 // import ""
-
+import {  IconButton } from '@chakra-ui/react';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 const Navbar = () => {
   
 
@@ -22,6 +23,13 @@ const Navbar = () => {
             <NavLink className="link" activeStyle={{color:"red"}} to="/about">About Us</NavLink>
 
             <NavLink className="link" activeStyle={{ color: 'yellow' }} to="/contact">Contact Us</NavLink>
+            <IconButton
+        aria-label="Cart"
+        icon={<AiOutlineShoppingCart />}
+        onClick={()=>console.log("hai")}
+        colorScheme="yellow" // Customize the color as needed
+        variant="outline" // You can use "solid" for a filled icon
+      />
           </div>
         </div>
       );
