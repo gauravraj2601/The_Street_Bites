@@ -1,0 +1,8 @@
+
+@media only screen  and (max-width: 660px) {
+    .menu_container{
+            grid-template-columns: repeat(2,1fr);
+    }
+
+}
+

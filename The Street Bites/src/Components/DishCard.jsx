@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-const DishCard = ({image,category,dishName,prices, details}) => {
+const DishCard = ({image,category,dishName,prices, details,rating}) => {
   const [isDisplay, setIsDisplay] = useState(true);
   const [isHovered, setIsHovered] = useState(true);
 
@@ -24,7 +24,7 @@ const DishCard = ({image,category,dishName,prices, details}) => {
     <div
       style={{
         width: "277px",
-        // border: "2px dashed red",
+        border: "2px dashed red",
         height: "280px",
         position: "relative",
         backgroundColor: "#010f29",
@@ -68,7 +68,7 @@ const DishCard = ({image,category,dishName,prices, details}) => {
           style={{
             position: "static",
             fontWeight: "bold",
-            color: "#585F70",
+            color: "#ffd12e",
             margin: "auto",
           }}
         >
@@ -88,6 +88,7 @@ const DishCard = ({image,category,dishName,prices, details}) => {
         </h1>
         <h1
           style={{
+            display: isDisplay ? "block" : "none",
             textAlign: "center",
             fontWeight: "700",
             fontSize: "20px",
@@ -97,6 +98,16 @@ const DishCard = ({image,category,dishName,prices, details}) => {
         >
          { `₹ ${prices.fullPortion}`}
         </h1>
+        <div style={{display: isDisplay ? "none" : "block", width:"40%",margin:"auto", textAlign:"left", marginLeft:"36%",marginTop:"5px"}}>
+
+        <h4 style={{ display: isDisplay ? "none" : "block"}} >Half: <span style={{opacity:"1", color:"#ffd12e"}}>{prices.halfPortion}  </span> </h4>
+
+        <h4 style={{ display: isDisplay ? "none" : "block"}} >Full: <span style={{opacity:"1", color:"#ffd12e"}}>{prices.fullPortion}  </span> </h4>
+
+        <h4 style={{ display: isDisplay ? "none" : "block"}} >Rating: <span style={{opacity:"1", color:"#ffd12e"}}>{rating}</span> </h4>
+        </div>
+
+       
       </div>
       <button
         className="btn1"
@@ -128,6 +139,7 @@ const DishCard = ({image,category,dishName,prices, details}) => {
         style={{
           backgroundColor: "black",
           display: isDisplay ? "none" : "block",
+          marginTop:"15px"
         }}
       />
       <div
