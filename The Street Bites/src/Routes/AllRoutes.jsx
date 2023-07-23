@@ -6,6 +6,7 @@ import Contact from "../Pages/Contact"
 import Login from "../Pages/Login"
 import About from '../Pages/About'
 import MenuCard from '../Pages/MenuCard'
+import CartItem from "../Pages/CartItem"
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
     <Route path="/menu/:id" element={<Menu />}/>
     <Route path="/contact" element={<Contact />}/>
     <Route path="/about" element={<About />}/>
+    <Route path="/cart" element={<CartItem />} />
     </Routes>
   )
 }

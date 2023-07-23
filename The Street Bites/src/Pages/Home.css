@@ -1,13 +1,20 @@
 
-.sliding_div{
+/* .sliding_div{
     background-image: url('../Images/sliding.png');
-  background-size: cover; /* Adjust as needed, e.g., 'contain', '100% 100%', etc. */
+  background-size: cover; 
   background-repeat: repeat; 
-}
+} */
 .sliding_div div{
     height: 100%;
 }
     /* font-family: Josefin Sans, Arial,sans-s;  '../Images/sliding.png' */
 #crunchy{
     font-family: "Nothing You Could Do", cursive;
+}
+.container{
+    color:white;
+    background-image: url('http://www.thestreetbites.com/images/bg_4.jpg');
+  background-size: cover; /* Adjust as needed, e.g., 'contain', '100% 100%', etc. */
+  background-repeat: repeat; 
+  width: 100%;
 }
