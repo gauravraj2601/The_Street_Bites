@@ -3,13 +3,13 @@ import CartBox from "../Components/CartBox";
 import "./CartItem.css";
 import Loading from "../Components/Loading";
 import axios from "axios";
+import PaymentModule from "../Components/PaymentMofule";
 
 const CartItem = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [grandTotal, setGrandTotal] = useState(0);
   const [filtered, setFiltered] = useState([]);
-  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   const fetchCartItems = () => {
     setLoading(true);
@@ -102,7 +102,13 @@ const CartItem = () => {
           {grandTotal}
         </div>
       </div>
+       {/* Render the PaymentModule component and pass cartItems and setCartItems as props */}
+       <div style={{width:"80%",margin:"auto",display:"flex", justifyContent:"end"}}>
+
+       <PaymentModule cartItems={cartItems} setCartItems={setCartItems} setFiltered={setFiltered} />
+       </div>
     </div>
+  
   );
 };
 

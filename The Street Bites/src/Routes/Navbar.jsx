@@ -77,7 +77,7 @@ const Navbar = ({grandTotalItemsCount}) => {
           Contact Us
         </NavLink>
         <div style={{ position: "relative" }}>
-        <Tooltip label={`Total Items: ${cartItems.length-1}`} placement="top">
+        <Tooltip label={`Total Items: ${cartItems.length>1? cartItems.length-1:0}`} placement="top">
           <IconButton
             aria-label="Cart"
             icon={<AiOutlineShoppingCart />}
@@ -102,7 +102,7 @@ const Navbar = ({grandTotalItemsCount}) => {
             fontSize: "12px",
           }}
         >
-          {cartItems.length-1}
+          {cartItems.length>1? cartItems.length-1:0}
         </div>
       </div>
       </div>

@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+The Street Bites - Fast Food Order Booking Web Application
+[The Street Bites](.//src/Images/logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Street Bites is a fast food order booking web application that allows users to browse a variety of delicious fast food items and place their orders online. With a user-friendly interface and a wide range of food options, The Street Bites aims to provide a convenient and efficient way for customers to satisfy their hunger cravings.
 
-## Available Scripts
+Tech Stack
+The Street Bites is built using the following technologies:
 
-In the project directory, you can run:
+Frontend:
 
-### `npm start`
+React.js: A popular JavaScript library for building user interfaces.
+Chakra UI: A simple and accessible UI component library for React.
+Axios: A promise-based HTTP client for making API requests.
+React Router: A library for handling routing in the React application.
+Backend:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js: A server-side JavaScript runtime environment.
+Express.js: A web application framework for Node.js.
+JSON Server: A simple and lightweight JSON-based server for rapid prototyping and development.
+Stripe API: A payment processing API to handle online payments.
+Features
+Menu Card: Users can browse through a menu card that showcases various fast food items with their images, names, categories, and prices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Cart: Users can add items to their cart, view the selected items, and see the total order value.
 
-### `npm test`
+Order Placement: Users can proceed to the order placement process by entering their name, delivery address, and card details for payment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Payment Integration: The Street Bites integrates with the Stripe API to securely handle online payments.
 
-### `npm run build`
+Order Confirmation: After successful payment, users receive an order confirmation message.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Responsive Design: The web application is designed to work seamlessly across different devices and screen sizes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+How to Use
+Visit The Street Bites Website to access the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Browse the menu card to explore various fast food options.
 
-### `npm run eject`
+Click on the items you want to order, select the quantity (half/full portion), and add them to your cart.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Proceed to the cart, review your selected items, and check the total order value.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Click on the "Checkout" button to place your order.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Enter your name, delivery address, and card details for payment processing.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Click on the "Make Payment" button to complete the payment.
 
-## Learn More
+Once the payment is successful, you will receive an order confirmation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Setup and Installation
+Clone the repository to your local machine.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install the required dependencies using npm install for both frontend and backend.
 
-### Code Splitting
+Start the JSON Server backend using npm start in the backend folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the React frontend using npm start in the frontend folder.
 
-### Analyzing the Bundle Size
+Open your web browser and navigate to http://localhost:3000 to access The Street Bites web application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions
+Contributions to The Street Bites project are welcome! If you find any bugs or have suggestions for new features, feel free to create issues or pull requests in the GitHub repository.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using The Street Bites web application! We hope you enjoy ordering your favorite fast food items with us. If you have any questions or need assistance, please feel free to contact us at support@thestreetbites.com. Happy ordering! 🍔🍟🍕
