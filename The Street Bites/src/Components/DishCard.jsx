@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import CartModal from "./CartModal";
 
 const DishCard = ({image,category,dishName,prices, details,rating}) => {
   const [isDisplay, setIsDisplay] = useState(true);
   const [isHovered, setIsHovered] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleMouseEnter = () => {
     setIsDisplay(false);
@@ -23,8 +25,8 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
   return (
     <div
       style={{
-        width: "277px",
-        border: "2px dashed red",
+        width: "270px",
+        // border: "2px dashed red",
         height: "280px",
         position: "relative",
         backgroundColor: "#010f29",
@@ -122,6 +124,7 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
           border:"2px solid #ffd12e",
           transition: "background-color 0.3s",
         }}
+        onClick={() => setIsModalOpen(true)}
         onMouseEnter={handleMouseEnter2 && handleMouseEnter}
         onMouseLeave={handleMouseLeave2 && handleMouseLeave}
       >
@@ -134,6 +137,14 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
         />
         Add To Cart
       </button>
+      <CartModal
+       isOpen={isModalOpen}
+       onClose={() => setIsModalOpen(false)}
+       dishName={dishName}
+       prices={prices}
+       category={category}
+       image={image}
+      />
 
       <hr
         style={{

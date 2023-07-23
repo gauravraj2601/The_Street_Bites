@@ -4,11 +4,13 @@ import Card from '../Components/card'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
 import "./Menu.css"
+import Loading from '../Components/Loading'
 
 const Menu = () => {
   const [data, setData]= useState([])
   const [filterCategory, setFilterCategory]= useState("")
   const {id}= useParams()
+  const [loading, setLoading] = useState(true);
  
   
 
@@ -44,12 +46,19 @@ const Menu = () => {
 
 
   const fetchData=()=>{
+    setLoading(true)
     axios
     .get(`https://street-bites-api.onrender.com/menu`,{
       params: { category:filterCategory},
     })
-    .then((res)=>setData(res.data))
-    .catch((error)=>console.log(error))
+    .then((res)=>{
+      setData(res.data)
+      setLoading(false)
+    })
+    .catch((error)=>{
+      console.log(error)
+      setLoading(false)
+    })
   }
  
 
@@ -59,14 +68,17 @@ const Menu = () => {
   console.log(data)
   console.log(filterCategory)
   return (
-    <div>
+    <div className='container'>
+              <div style={{textAlign:"center",fontWeight:"650", fontFamily:"algerian",fontSize:"27px",marginTop:"10px"}}>Our Menu</div>
         <Card />
-        <div className='menu_container' style={{display:"grid", gridTemplateColumns:"repeat(4,1fr)",width:"90%",margin:"auto", marginLeft:"7%"}}>
-            {data?.map((el)=>(
-              <DishCard key={el.id} {...el} />
+        {loading? <Loading />:(
+          <div className='menu_container' style={{width:"90%",display:"grid", gridTemplateColumns:"repeat(4,1fr)",margin:"auto", marginLeft:"7%"}}>
+          {data?.map((el)=>(
+            <DishCard key={el.id} {...el} />
 
-            ))}
-        </div>
+          ))}
+      </div>
+        )}
     </div>
   )
 }
