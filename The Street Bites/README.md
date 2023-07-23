@@ -1,9 +1,9 @@
-The Street Bites - Fast Food Order Booking Web Application
+**The Street Bites - Fast Food Order Booking Web Application**
 [The Street Bites](.//src/Images/logo.png)
 
 The Street Bites is a fast food order booking web application that allows users to browse a variety of delicious fast food items and place their orders online. With a user-friendly interface and a wide range of food options, The Street Bites aims to provide a convenient and efficient way for customers to satisfy their hunger cravings.
 
-Tech Stack
+**Tech Stack**
 The Street Bites is built using the following technologies:
 
 Frontend:
@@ -18,7 +18,8 @@ Node.js: A server-side JavaScript runtime environment.
 Express.js: A web application framework for Node.js.
 JSON Server: A simple and lightweight JSON-based server for rapid prototyping and development.
 Stripe API: A payment processing API to handle online payments.
-Features
+
+**Features**
 Menu Card: Users can browse through a menu card that showcases various fast food items with their images, names, categories, and prices.
 
 Cart: Users can add items to their cart, view the selected items, and see the total order value.
@@ -31,7 +32,7 @@ Order Confirmation: After successful payment, users receive an order confirmatio
 
 Responsive Design: The web application is designed to work seamlessly across different devices and screen sizes.
 
-How to Use
+**How to Use**
 Visit The Street Bites Website to access the application.
 
 Browse the menu card to explore various fast food options.
@@ -48,7 +49,7 @@ Click on the "Make Payment" button to complete the payment.
 
 Once the payment is successful, you will receive an order confirmation.
 
-Setup and Installation
+**Setup and Installation**
 Clone the repository to your local machine.
 
 Install the required dependencies using npm install for both frontend and backend.
@@ -59,7 +60,7 @@ Start the React frontend using npm start in the frontend folder.
 
 Open your web browser and navigate to http://localhost:3000 to access The Street Bites web application.
 
-Contributions
+**Contributions**
 Contributions to The Street Bites project are welcome! If you find any bugs or have suggestions for new features, feel free to create issues or pull requests in the GitHub repository.
 
 
