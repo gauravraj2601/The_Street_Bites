@@ -7,6 +7,7 @@ import Login from "../Pages/Login"
 import About from '../Pages/About'
 import MenuCard from '../Pages/MenuCard'
 import CartItem from "../Pages/CartItem"
+import Signin from '../Pages/SignIn'
 
 const AllRoutes = () => {
   return (
@@ -18,6 +19,8 @@ const AllRoutes = () => {
     <Route path="/contact" element={<Contact />}/>
     <Route path="/about" element={<About />}/>
     <Route path="/cart" element={<CartItem />} />
+    <Route path='/signin' element={<Signin />} />
+
     </Routes>
   )
 }
