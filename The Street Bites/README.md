@@ -1,5 +1,5 @@
 The Street Bites - Fast Food Order Booking Web Application
-[The Street Bites](.//src/Images/logo.png)
+[The Street Bites]()
 
 The Street Bites is a fast food order booking web application that allows users to browse a variety of delicious fast food items and place their orders online. With a user-friendly interface and a wide range of food options, The Street Bites aims to provide a convenient and efficient way for customers to satisfy their hunger cravings.
 

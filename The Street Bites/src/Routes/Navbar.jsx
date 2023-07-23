@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
 import "./Navbar.css";
 import axios from "axios";
-import { IconButton, Tooltip, Badge } from "@chakra-ui/react";
+import { IconButton, Tooltip } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
-const Navbar = ({grandTotalItemsCount}) => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
   
@@ -50,7 +50,7 @@ const Navbar = ({grandTotalItemsCount}) => {
       </div>
       <div
         style={{
-          width: "35%",
+          width: "40%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
@@ -91,7 +91,7 @@ const Navbar = ({grandTotalItemsCount}) => {
             position: "absolute",
             top: "-10px",
             right: "-10px",
-            backgroundColor: "#ffd12e",
+            backgroundColor: "#ab6d1b",
             borderRadius: "50%",
             width: "20px",
             height: "20px",
@@ -105,6 +105,7 @@ const Navbar = ({grandTotalItemsCount}) => {
           {cartItems.length>1? cartItems.length-1:0}
         </div>
       </div>
+      <button id="sign" style={{width:"80px", height:"35px",backgroundColor:"#ab6d1b", color:"white",borderRadius:"15px", fontWeight:"700"}}  onClick={()=>navigate("/signin")} >SignUp</button>
       </div>
     </div>
   );
