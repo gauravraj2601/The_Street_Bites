@@ -5,6 +5,7 @@ import "./Navbar.css";
 import axios from "axios";
 import { IconButton, Tooltip } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import flag from "../Images/flag.png"
 
 
 const Navbar = () => {
@@ -44,7 +45,7 @@ const Navbar = () => {
         </NavLink>
         <img
           style={{ width: "100px", height: "77px", margin: "10px 0 0 -13px" }}
-          src="http://www.thestreetbites.com/images/india-india-flag.gif"
+          src={flag}
           alt="imgError"
         />
       </div>
