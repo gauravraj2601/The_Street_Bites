@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 import Card from "../Components/card";
 import home2 from "../Images/home2.png";
 import { FaPhone } from "react-icons/fa";
-
+import bg1 from "../Images/bg_1.png"
+import bg2 from "../Images/bg_2.png"
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
   const images = [
-    "http://www.thestreetbites.com/images/bg_1.png",
-    "http://www.thestreetbites.com/images/bg_2.png",
+    bg1,
+    bg2,
   ];
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      
       <div
         className="sliding_div"
         style={{
