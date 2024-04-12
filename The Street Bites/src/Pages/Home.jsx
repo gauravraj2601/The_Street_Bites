@@ -41,7 +41,7 @@ const Home = () => {
           style={{
             width: "45%",
             height: "350px",
-            border: "2px solid green",
+            // border: "2px solid green",
             margin: "auto",
             display: "flex",
             alignItems: "center",

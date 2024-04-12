@@ -71,13 +71,13 @@ const Menu = () => {
     <div className='container'>
               <div style={{textAlign:"center",fontWeight:"650", fontFamily:"algerian",fontSize:"27px",marginTop:"10px"}}>Our Menu</div>
         <Card />
-        {loading? <Loading />:(
-          <div className='menu_container' style={{width:"90%",display:"grid", gridTemplateColumns:"repeat(4,1fr)",margin:"auto", marginLeft:"7%"}}>
+        {loading? <Loading />:(<div id='menu_container' style={{width:"90%",margin:"auto", marginLeft:"7%", }}>
           {data?.map((el)=>(
             <DishCard key={el.id} {...el} />
 
           ))}
       </div>
+          
         )}
     </div>
   )
