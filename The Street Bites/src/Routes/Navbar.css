@@ -1,4 +1,6 @@
 
+
+
 .link{
     color: white;
     text-decoration: none;
@@ -8,4 +10,12 @@
     border: 2px solid #ab6d1b;
     background-color: white;
     color: #ab6d1b;
+}
+
+@media (max-width: 768px) {    
+   .link{
+    display: none;
+    color: red;
+    /* flex-direction: column; */
+   }
 }
