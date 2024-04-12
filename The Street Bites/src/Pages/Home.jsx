@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import Button from "../Components/Button";
 import { useNavigate } from "react-router-dom";
-import Card from "../Components/card";
+import Card from "../Components/Card";
 import home2 from "../Images/home2.png";
 import { FaPhone } from "react-icons/fa";
 import bg1 from "../Images/bg_1.png"
@@ -28,6 +28,7 @@ const Home = () => {
       <div
         className="sliding_div"
         style={{
+          
           width: "100%",
           height: "450px",
           margin: "auto",
@@ -40,7 +41,7 @@ const Home = () => {
           style={{
             width: "45%",
             height: "350px",
-            // border: "2px solid green",
+            border: "2px solid green",
             margin: "auto",
             display: "flex",
             alignItems: "center",
@@ -49,18 +50,19 @@ const Home = () => {
             opacity: currentImageIndex % 2 === 0 ? 1 : 0,
           }}
         >
-          <div>
+          {/* image */}
+          <div style={{display:'flex', alignItems:"center"}}>
             <img
               src={images[currentImageIndex]}
               alt="slide"
               style={{
                 width: "450px",
-                height: "400px",
+                // height: "400px",
                 objectFit: "cover",
               }}
             />
           </div>
-          <div style={{ color: "white", height:"200px",width:"220px",  }}>
+          <div style={{ color: "white", height:"200px",width:"220px"  }}>
             <h1
               style={{
                 fontFamily: "Nothing You Could Do, cursive",
@@ -100,7 +102,8 @@ const Home = () => {
               buttonClick={() => navigate("/menucard")}
             />
           </div>
-          <div>
+          {/* image */}
+          <div style={{display:'flex', alignItems:"center"}}>
             <img
               src={images[currentImageIndex]}
               alt="slide"
@@ -117,7 +120,7 @@ const Home = () => {
           textAlign: "center",
           fontWeight: "650",
           fontFamily: "algerian",
-          fontSize: "27px",
+          fontSize: "37px",
           marginTop: "10px",
         }}
       >

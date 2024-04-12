@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import styled from "styled-components"
 const Card = () => {
   const menuCard = [
     {
@@ -37,55 +37,65 @@ const Card = () => {
     },
   ];
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4,1fr)",
-        width: "90%",
-        margin: "auto",
-        gap: "12px",
-        marginTop: "15px",
-        // border: "2px solid red",
-      }}
-    >
-      {menuCard.map((el, index) => {
-        return (
-          <Link
-            to={`/menu/${index + 1}`}
-            style={{
-              textDecoration: "none",
-              fontFamily: "cursive",
-              color: "#ffd12e",
-              fontSize: "38px",
-              fontWeight: "bold",
-              display: "flex",
-            //   border: "2px solid red",
-
-            }}
-          >
-            <div
+    <CARD>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4,1fr)",
+          width: "87%",
+          margin: "auto",
+          gap: "12px",
+          marginTop: "15px",
+        }}
+      >
+        {menuCard.map((el, index) => {
+          return (
+            <Link
+              to={`/menu/${index + 1}`}
               style={{
-                width: "82%",
-                height: "270px",
-                margin:"auto",
-                backgroundImage: `url(${el.img})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "repeat",
-                borderRadius: "15px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "flex-end",
+                textDecoration: "none",
                 fontFamily: "cursive",
+                color: "#ffd12e",
+                fontSize: "38px",
+                fontWeight: "bold",
+                display: "flex",
+                //   border: "2px solid red",
               }}
-              key={index}
             >
-              {el.name}
-            </div>
-          </Link>
-        );
-      })}
-    </div>
+              <div
+                id="card-element"
+                style={{
+                  width: "100%",
+                  height: "320px",
+                  margin: "auto",
+                  backgroundImage: `url(${el.img})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "repeat",
+                  borderRadius: "15px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "flex-end",
+                  fontFamily: "cursive",
+                }}
+                key={index}
+              >
+                {el.name}
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </CARD>
   );
 };
 
 export default Card;
+
+const CARD = styled.div`
+   @media (max-width: 768px) {
+  }
+  
+ 
+
+
+`;

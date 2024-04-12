@@ -52,8 +52,10 @@ const Navbar = () => {
         className="navbar"
         style={{
           display: "flex",
+          width:"100%",
           backgroundColor: "#121618",
           justifyContent: "space-between",
+          
         }}
       >
         <div style={{ marginLeft: "10%", display: "flex" }}>
@@ -69,11 +71,11 @@ const Navbar = () => {
         <div
           id="section"
           style={{
-            width: "40%",
+            width: "45%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-around",
-            marginRight: "15%",
+            marginRight: "10%",
           }}
         >
           <NavLink className="link" activeStyle={{ color: "yellow" }} to="/">

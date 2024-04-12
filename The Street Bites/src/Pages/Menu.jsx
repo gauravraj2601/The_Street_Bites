@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DishCard from '../Components/DishCard'
-import Card from '../Components/card'
+import Card from '../Components/Card'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
 import "./Menu.css"

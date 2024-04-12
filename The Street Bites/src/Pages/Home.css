@@ -18,3 +18,10 @@
   background-repeat: repeat; 
   width: 100%;
 }
+
+@media (max-width: 768px){
+    .sliding_div{
+      font-size: 10px;
+    }
+   
+}
