@@ -14,7 +14,7 @@
 .container{
     color:white;
     background-image: url('../Images/bg_4.jpg');
-  background-size: cover; /* Adjust as needed, e.g., 'contain', '100% 100%', etc. */
+  background-size: cover;
   background-repeat: repeat; 
   width: 100%;
 }

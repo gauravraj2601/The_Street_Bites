@@ -15,20 +15,23 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import BACKEND_API from '../API/api';
 
 export default function Signin() {
+  const [name, setName]= useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate= useNavigate();
 
   const handleSignup = async () => {
     const userDetails = {
+      name,
       email,
       password
     };
 
     try {
-      const response = await axios.post('https://mock-api-hotels.onrender.com/users', userDetails);
+      const response = await axios.post(`${BACKEND_API}/user/register`, userDetails);
       const data = response.data;
       console.log(data);
       resetFields(); // Reset input fields after successful signup   https://nearbuy-mock-server.onrender.com/users
@@ -45,6 +48,7 @@ export default function Signin() {
   };
 
   const resetFields = () => {
+    setName("")
     setEmail("");
     setPassword("");
   };
@@ -71,6 +75,16 @@ console.log(email, password)
 
           <form onSubmit={handleSubmit}>
             <Stack spacing={4}>
+            <FormControl id="name">
+                <FormLabel>Name</FormLabel>
+                <Input
+                  type="text"
+                  required
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </FormControl>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
                 <Input

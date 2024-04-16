@@ -120,8 +120,8 @@ const Home = () => {
           textAlign: "center",
           fontWeight: "650",
           fontFamily: "algerian",
-          fontSize: "37px",
-          marginTop: "10px",
+          fontSize: "37px",   
+          marginTop:"-40px"      
         }}
       >
         Our Menu
