@@ -39,9 +39,10 @@ const Card = () => {
   return (
     <CARD>
       <div
+      id="card-menu"
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4,1fr)",
+          // display: "grid",
+          // gridTemplateColumns: "repeat(4,1fr)",
           width: "87%",
           margin: "auto",
           gap: "12px",
@@ -66,11 +67,12 @@ const Card = () => {
                 id="card-element"
                 style={{
                   width: "100%",
-                  height: "320px",
                   margin: "auto",
                   backgroundImage: `url(${el.img})`,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "repeat",
+                  // backgroundSize: "cover",
+                  backgroundSize: "100% 100%", // Fix the size of the background image
+
+                  backgroundRepeat: "no-repeat",
                   borderRadius: "15px",
                   display: "flex",
                   justifyContent: "center",
@@ -92,7 +94,22 @@ const Card = () => {
 export default Card;
 
 const CARD = styled.div`
-   @media (max-width: 768px) {
+  #card-menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  #card-element{
+    height: 200px;
+  }
+
+   @media (min-width: 780px) {
+    #card-menu{
+      grid-template-columns: repeat(4, 1fr);
+    }
+    #card-element{
+      height: 290px;
+    }
   }
   
  

@@ -28,20 +28,13 @@ const Home = () => {
       <div
         className="sliding_div"
         style={{
-          
-          width: "100%",
-          height: "450px",
-          margin: "auto",
-          // border: "1px solid red",
           display: "flex",
-          // position: 'relative',\
+          width: "100%",
         }}
       >
         <div
+        className="slide-box1"
           style={{
-            width: "45%",
-            height: "350px",
-            // border: "2px solid green",
             margin: "auto",
             display: "flex",
             alignItems: "center",
@@ -57,12 +50,11 @@ const Home = () => {
               alt="slide"
               style={{
                 width: "450px",
-                // height: "400px",
                 objectFit: "cover",
               }}
             />
           </div>
-          <div style={{ color: "white", height:"200px",width:"220px"  }}>
+          <div style={{ color: "white", height:"195px",width:"220px"  }}>
             <h1
               style={{
                 fontFamily: "Nothing You Could Do, cursive",
@@ -82,9 +74,8 @@ const Home = () => {
         </div>
 
         <div
+          className="slide-box2"
           style={{
-            width: "40%",
-            height: "350px",
             // border: "2px solid green",
             margin: "auto",
             display: "flex",

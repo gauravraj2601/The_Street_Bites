@@ -43,11 +43,15 @@ const MenuCard = () => {
         }}
       ></div>
 
+        {/* menu cart items */}
+
       <div
         className="menuCard_Container"
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2,1fr)",
+          // display: "grid",
+          // gridTemplateColumns: "repeat(2,1fr)",
+          justifyContent:"center",
+          alignItems:"center",
           width: "70%",
           margin: "auto",
           gap: "30px",
@@ -56,22 +60,11 @@ const MenuCard = () => {
         }}
       >
         <div
-          style={{
-            width: "520px",
-            height: "730px",
-            boxShadow: "red 0px 20px 30px -10px",
-          }}
-        >
+        className="image-div">
           <div
-            style={{
-              backgroundColor: "black",
-              width: "515px",
-              height: "725px",
-              margin: "auto",
-            }}
-          >
+          className="image-box">
             <img
-              style={{ width: "510px", height: "720px", margin: "auto" }}
+            className="menu-image"
               src={menu1}
               alt="menu"
             />
@@ -79,66 +72,33 @@ const MenuCard = () => {
         </div>
 
         <div
-          style={{
-            boxShadow: "red 0px 20px 30px -10px",
-            width: "520px",
-            height: "730px",
-          }}
-        >
+        className="image-div">
           <div
-            style={{
-              backgroundColor: "black",
-              width: "515px",
-              height: "725px",
-              margin: "auto",
-            }}
-          >
+          className="image-box">
             <img
-              style={{ width: "510px", height: "720px", margin: "auto" }}
+            className="menu-image"
               src={menu2}
               alt="menu"
             />
           </div>
         </div>
         <div
-          style={{
-            width: "520px",
-            height: "730px",
-            boxShadow: "red 0px 20px 30px -10px",
-          }}
-        >
+        className="image-div">
           <div
-            style={{
-              backgroundColor: "black",
-              width: "515px",
-              height: "725px",
-              margin: "auto",
-            }}
-          >
+          className="image-box" >
             <img
-              style={{ width: "510px", height: "720px", margin: "auto" }}
+            className="menu-image"
               src={menu3}
               alt="menu"
             />
           </div>
         </div>
         <div
-          style={{
-            width: "520px",
-            height: "730px",
-            boxShadow: "red 0px 20px 30px -10px",
-          }}
-        >
+        className="image-div">
           <div
-            style={{
-              backgroundColor: "black",
-              width: "515px",
-              height: "725px",
-              margin: "auto",
-            }}
-          >
+          className="image-box">
             <img
-              style={{ width: "510px", height: "720px", margin: "auto" }}
+            className="menu-image"
               src={menu4}
               alt="menu"
             />
