@@ -6,8 +6,8 @@
 
 } */
 .container{
-    color:white;
-    background-image: url('../Images/bg_4.jpg');
+  color:white;
+  background-image: url('../Images/bg_4.jpg');
   background-size: cover; 
   background-repeat: repeat; 
   width: 100%;
@@ -34,4 +34,3 @@
   }
 }
 
-/* ,display:"grid", gridTemplateColumns:"repeat(4,1fr)" 1007 */

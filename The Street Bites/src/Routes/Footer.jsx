@@ -7,16 +7,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      style={{
-        width: "100%",
-        height: "350px",
-        backgroundColor: "#101315",
-        display: "flex",
-        gap: "20px",
-        paddingTop: "30px",
-        marginTop: "20px",
-      }}
-    >
+    id="footer">
       <div style={{ width: "30%", marginLeft: "20%" }}>
         <h4>ABOUT US</h4>
         <p>

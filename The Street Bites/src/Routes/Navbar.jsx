@@ -15,15 +15,26 @@ const NAV = styled.div`
     #hamBug{
       display: none;
    }
+   #flag-image{
+      width: 100px;
+      height: 77px;
+      margin: 10px 0 0 -13px;
+   }
 
-
-  @media (max-width: 768px) {
-    .link {
-      display: none;
-    }
-    #hamBug{
-      display: block;
-    }
+   @media (max-width: 768px) {
+     .link {
+       display: none;
+      }
+      #hamBug{
+        display: block;
+      }
+      #image-logo{
+        width: 100px;
+      }
+      #flag-image{
+        width: 70px;
+        height: 57px;
+      }
   }
 `;
 const Navbar = () => {
@@ -60,10 +71,10 @@ const Navbar = () => {
       >
         <div style={{ marginLeft: "10%", display: "flex" }}>
           <NavLink to={"/"}>
-            <img src={logo} alt="Logo" />
+            <img id="image-logo" src={logo} alt="Logo" />
           </NavLink>
           <img
-            style={{ width: "100px", height: "77px", margin: "10px 0 0 -13px" }}
+            id="flag-image"
             src={flag}
             alt="imgError"
           />
