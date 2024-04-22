@@ -7,6 +7,7 @@ import home2 from "../Images/home2.png";
 import { FaPhone } from "react-icons/fa";
 import bg1 from "../Images/bg_1.png"
 import bg2 from "../Images/bg_2.png"
+import DishSlider from "../Components/DishSlider";
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
@@ -120,10 +121,18 @@ const Home = () => {
       <div>
         <Card />
       </div>
+
+        {/* Dish Slider */}
+      <>
+        <DishSlider />
+      </>
+
+
+        {/* Display Image */}
       <div
         style={{ marginTop: "20px", boxShadow: "white 0px 20px 30px -10px" }}
       >
-        <img src={home2} alt="" />
+        <img src={home2} alt="Dishes" />
       </div>
       <div style={{ marginTop: "50px", textAlign: "center" }}>
         <h1 style={{ fontSize: "30px" }}>Contact Us for Home Delivery</h1>
