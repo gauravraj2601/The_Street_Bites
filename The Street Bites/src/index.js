@@ -32,7 +32,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-// Domain - dev-qqagkvrhay0rsmbb.us.auth0.com
-// Client id - Bx1F2X4wTdleu7rJORMWGdr4jNaXLXss
-// Client Secret Key - dcrt7R3oc8uIre6jeK_PtccQg22VmFzt-866_794RIy1o8T2jz9jgKv_u7Np3KL3
