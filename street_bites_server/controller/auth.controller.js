@@ -24,7 +24,7 @@ const authCallback = async (req, res) => {
     // Generate a JWT token for the user
     const jwtToken = jwt.sign(
       { id: existingUser._id, name: existingUser.name, picture: existingUser.picture },
-      process.env.SECRET_KEY
+      process.env.SERCET_KEY
     );
 
     // Send token and user info back to the client
