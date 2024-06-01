@@ -1,27 +1,31 @@
 import React, { useState } from "react";
-import { IconButton } from "@chakra-ui/react";
+import { Icon, IconButton } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CartModal from "./CartModal";
 
-const DishCardSlider = ({image,category,dishName,prices, details,rating}) => {
-
+const DishCardSlider = ({
+  image,
+  category,
+  dishName,
+  prices,
+  details,
+  rating,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
   return (
     <div
-    className="scroll"
+      className="scroll"
       style={{
         width: "270px",
         // border: "2px dashed red",
         height: "290px",
         position: "relative",
         backgroundColor: "#010f29",
-        marginTop:"70px",
-        marginBottom:"10px",
-        borderRadius:"15px"
+        marginTop: "70px",
+        marginBottom: "10px",
+        borderRadius: "15px",
       }}
-      
     >
       <div
         className="dish_image"
@@ -45,7 +49,7 @@ const DishCardSlider = ({image,category,dishName,prices, details,rating}) => {
         className="dishName"
         style={{
           position: "relative",
-          top:"130px",
+          top: "130px",
           marginLeft: "15px",
           width: "240px",
           height: "130px",
@@ -74,17 +78,35 @@ const DishCardSlider = ({image,category,dishName,prices, details,rating}) => {
         >
           {dishName}
         </h1>
-      
-        <div style={{ width:"40%",margin:"auto", textAlign:"left", marginLeft:"36%",marginTop:"5px"}}>
 
-        <h4>Half: <span style={{opacity:"1", color:"#ffd12e"}}>{prices.halfPortion}  </span> </h4>
+        <div
+          style={{
+            width: "40%",
+            margin: "auto",
+            textAlign: "left",
+            marginLeft: "36%",
+            marginTop: "5px",
+          }}
+        >
+          <h4>
+            Half:{" "}
+            <span style={{ opacity: "1", color: "#ffd12e" }}>
+              {prices.halfPortion}{" "}
+            </span>{" "}
+          </h4>
 
-        <h4>Full: <span style={{opacity:"1", color:"#ffd12e"}}>{prices.fullPortion}  </span> </h4>
+          <h4>
+            Full:{" "}
+            <span style={{ opacity: "1", color: "#ffd12e" }}>
+              {prices.fullPortion}{" "}
+            </span>{" "}
+          </h4>
 
-        <h4>Rating: <span style={{opacity:"1", color:"#ffd12e"}}>{rating}</span> </h4>
+          <h4>
+            Rating:{" "}
+            <span style={{ opacity: "1", color: "#ffd12e" }}>{rating}</span>{" "}
+          </h4>
         </div>
-
-       
       </div>
       <button
         className="btn1"
@@ -95,31 +117,35 @@ const DishCardSlider = ({image,category,dishName,prices, details,rating}) => {
           left: "60px",
           top: "272px",
           borderRadius: "15px",
-          border:"2px solid #ffd12e",
+          border: "2px solid #ffd12e",
           transition: "background-color 0.3s",
-          backgroundColor:"#ffd12e",
+          backgroundColor: "#ffd12e",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center",
+          gap:"7px"
         }}
         onClick={() => setIsModalOpen(true)}
       >
-        <IconButton
+        <Icon
           aria-label="Cart"
-          icon={<AiOutlineShoppingCart />}
-          colorScheme="blue"
-          variant="soid"
-          style={{ width: "12px", height: "28px", marginRight: "1px" }}
+          // icon={<AiOutlineShoppingCart />}
+          as={AiOutlineShoppingCart}
+          color="white.500"
+          style={{ width: "18px", height: "28px" }}
         />
         Add To Cart
       </button>
+
       <CartModal
-       isOpen={isModalOpen}
-       onClose={() => setIsModalOpen(false)}
-       dishName={dishName}
-       prices={prices}
-       category={category}
-       image={image}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        dishName={dishName}
+        prices={prices}
+        category={category}
+        image={image}
       />
 
-     
       <div
         style={{
           width: "240px",
@@ -127,9 +153,7 @@ const DishCardSlider = ({image,category,dishName,prices, details,rating}) => {
           marginTop: "10px",
           marginLeft: "23px",
         }}
-      >
-      </div>
-   
+      ></div>
     </div>
   );
 };

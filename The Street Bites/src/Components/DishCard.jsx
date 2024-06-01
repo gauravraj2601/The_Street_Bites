@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IconButton } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import CartModal from "./CartModal";
 
@@ -27,7 +27,6 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
     className="scroll"
       style={{
         width: "270px",
-        // border: "2px dashed red",
         height: "280px",
         position: "relative",
         backgroundColor: "#010f29",
@@ -112,7 +111,7 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
 
        
       </div>
-      <button
+      {/* <button
         className="btn1"
         style={{
           width: "160px",
@@ -135,6 +134,36 @@ const DishCard = ({image,category,dishName,prices, details,rating}) => {
           colorScheme="blue"
           variant="soid"
           style={{ width: "12px", height: "28px", marginRight: "1px" }}
+        />
+        Add To Cart
+      </button> */}
+      <button
+        className="btn1"
+        style={{
+          width: "160px",
+          height: "35px",
+          position: "absolute",
+          left: "60px",
+          top: "262px",
+          backgroundColor: isHovered ?"#ffd12e": "white",
+          borderRadius: "15px",
+          border:"2px solid #ffd12e",
+          transition: "background-color 0.3s",
+          display:"flex",
+          justifyContent:"center",
+          alignItems:"center",
+          gap:"7px"
+        }}
+        onClick={() => setIsModalOpen(true)}
+        onMouseEnter={handleMouseEnter2 && handleMouseEnter}
+        onMouseLeave={handleMouseLeave2 && handleMouseLeave}
+      >
+        <Icon
+          aria-label="Cart"
+          // icon={<AiOutlineShoppingCart />}
+          as={AiOutlineShoppingCart}
+          color="white.500"
+          style={{ width: "18px", height: "28px" }}
         />
         Add To Cart
       </button>

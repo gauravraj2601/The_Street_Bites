@@ -2,43 +2,25 @@ import React, { useEffect, useState } from "react";
 import DishCard from "../Components/DishCard";
 import Card from "../Components/Card";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import "./Menu.css";
 import Loading from "../Components/Loading";
 import BACKEND_API from "../API/api";
 
 const Menu = () => {
   const [data, setData] = useState([]);
-  const [filterCategory, setFilterCategory] = useState("");
-  const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [searchParams]= useSearchParams();
+  const category= searchParams.get("category")
 
-  useEffect(() => {
-    if (id === "1") {
-      setFilterCategory(null);
-    } else if (id === "2") {
-      setFilterCategory("Pizzas");
-    } else if (id === "3") {
-      setFilterCategory("Burgers");
-    } else if (id === "4") {
-      setFilterCategory("Pastas");
-    } else if (id === "5") {
-      setFilterCategory("Fried Chicken");
-    } else if (id === "6") {
-      setFilterCategory("Desserts");
-    } else if (id === "7") {
-      setFilterCategory("Drinks");
-    } else if (id === "8") {
-      setFilterCategory(null);
-    } else {
-      setFilterCategory(null);
-    }
-  }, [id]);
+ 
   const fetchData = () => {
     setLoading(true);
+    const categoryParam = (category === "New" || category === "All") ? null : (category === "Non-Veg")? "Fried Chicken": category;
+
     axios
       .get(`${BACKEND_API}/menu`, {
-        params: { category: filterCategory },
+        params: { category: categoryParam },
       })
       .then((res) => {
         setData(res.data.menuList);
@@ -52,7 +34,7 @@ const Menu = () => {
 
   useEffect(() => {
     fetchData();
-  }, [filterCategory]);
+  }, [category]);
  
   return (
     <div className="container">
@@ -75,8 +57,8 @@ const Menu = () => {
           id="menu_container"
           style={{ width: "90%", margin: "auto", marginLeft: "7%" }}
         >
-          {data && data?.map((el) => (
-            <DishCard key={el.id} {...el} />
+          {data && data?.map((el, index) => (
+            <DishCard key={index+1} {...el} />
           ))}
         </div>
       )}

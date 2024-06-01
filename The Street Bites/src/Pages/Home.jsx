@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Home.css";
 import Button from "../Components/Button";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { FaPhone } from "react-icons/fa";
 import bg1 from "../Images/bg_1.png"
 import bg2 from "../Images/bg_2.png"
 import DishSlider from "../Components/DishSlider";
+import { AppContext } from "../Context/ContextProvider";
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ const Home = () => {
     bg1,
     bg2,
   ];
+
+  const {dark, data}= useContext(AppContext)
 
   useEffect(() => {
     const interval = setInterval(() => {
