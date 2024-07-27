@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./About.css"
 
+// About-Us Page
 
 const About = () => {
     const ArrowButton = ({ direction, onClick }) => (
@@ -56,7 +57,7 @@ const About = () => {
         <Slider {...settings} style={{margin:"auto", width:"70%",marginTop:"10px" }} >
           {images.map((image, index) => (
             <div key={index}>
-              <img style={{width:"100%",height:"450px"}} src={image} alt={`Image ${index + 1}`} />
+              <img style={{width:"100%",height:"450px"}} src={image} alt={`Imag ${index + 1}`} />
 
               <div style={{margin:"auto",backgroundColor:"#010f29", width:"100%", padding:"15px"}}><p style={{color:"white"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui maiores sapiente suscipit dolorum dignissimos modi cum eveniet harum officiis debitis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam et adipisci excepturi aspernatur sit itaque non id impedit consectetur voluptatibus! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda obcaecati ratione ea. Dignissimos doloremque harum quae sed odio atque mollitia facilis consequuntur alias. Ducimus placeat totam provident quia, est autem!</p></div>
             </div>

@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components"
+
+// OUR MENU CART BOXES (categories)
+
 const Card = () => {
 
   const menuCard = [

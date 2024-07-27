@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon, IconButton } from "@chakra-ui/react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import CartModal from "./CartModal";
+import CartModal from "../CartModal";
 
 const DishCardSlider = ({
   image,

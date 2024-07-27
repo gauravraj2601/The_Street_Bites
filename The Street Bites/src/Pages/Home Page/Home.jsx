@@ -1,31 +1,43 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, memo  } from "react";
 import "./Home.css";
-import Button from "../Components/Button";
+import Button from "../../Components/Button";
 import { useNavigate } from "react-router-dom";
-import Card from "../Components/Card";
-import home2 from "../Images/home2.png";
+import Card from "../../Components/Card";
+import home2 from "../../Images/home2.png";
 import { FaPhone } from "react-icons/fa";
-import bg1 from "../Images/bg_1.png"
-import bg2 from "../Images/bg_2.png"
-import DishSlider from "../Components/DishSlider";
-import { AppContext } from "../Context/ContextProvider";
+import bg1 from "../../Images/bg_1.png"
+import bg2 from "../../Images/bg_2.png"
+import DishSlider from "../../Components/Slider/DishSlider";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenus } from "../../Redux/GetMenu/action";
+import { getCartItem } from "../../Redux/Cart/action";
+import { useAuth0 } from "@auth0/auth0-react";
 const Home = () => {
+  const dispatch= useDispatch()
+  const {  user} =
+    useAuth0();
+  const menus =  useSelector((store)=>store.menuReducer.menus)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
-  const images = [
-    bg1,
-    bg2,
-  ];
-
-  const {dark, data}= useContext(AppContext)
-
+  const images = [bg1, bg2];
+  
+  
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
   }, [images]);
+  
+  useEffect(()=>{
+    dispatch(getMenus())
+    dispatch(getCartItem(user))
+  },[user])
+  
+  // console.log("menus_ome", menus)
 
+  
   return (
     <div className="container">
       
@@ -122,12 +134,12 @@ const Home = () => {
         Our Menu
       </div>
       <div>
-        <Card />
+        <MemoizedCard />
       </div>
 
         {/* Dish Slider */}
       <>
-        <DishSlider />
+        <MemoizedDishSlider data={menus}/>
       </>
 
 
@@ -155,5 +167,8 @@ const Home = () => {
     </div>
   );
 };
+
+const MemoizedCard = memo(Card);
+const MemoizedDishSlider = memo(DishSlider);
 
 export default Home;

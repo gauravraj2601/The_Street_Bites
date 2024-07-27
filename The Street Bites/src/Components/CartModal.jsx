@@ -1,27 +1,37 @@
 // CartModal.js
-import React, { useState } from 'react';
-import {
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
-    ModalBody,
-    ModalCloseButton,
-    Button,
-    NumberInput,
-    NumberInputField,
-    NumberInputStepper,
-    NumberIncrementStepper,
-    NumberDecrementStepper,
-    FormControl,
-    FormLabel,
-  } from '@chakra-ui/react';
-  import axios from 'axios';
+import React, { useState } from "react";
+import { useAuth0 } from '@auth0/auth0-react';
 
-  const CartModal = ({ isOpen, onClose, dishName, prices, category, image }) => {
-    const [halfPortionQuantity, setHalfPortionQuantity] = useState(0);
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getCartItem } from "../Redux/Cart/action";
+import BACKEND_API from "../API/api";
+
+const CartModal = ({ isOpen, onClose, dishName, prices, category, image }) => {
+  
+  const {  user } = useAuth0();
+  const dispatch = useDispatch();
+  const [halfPortionQuantity, setHalfPortionQuantity] = useState(0);
   const [fullPortionQuantity, setFullPortionQuantity] = useState(0);
+
+
 
   const calculatePriceTotal = () => {
     const halfPortionPrice = prices.halfPortion * halfPortionQuantity;
@@ -39,23 +49,28 @@ import {
       image,
       halfPortionQuantity,
       fullPortionQuantity,
-      totalOrderValue, // Include the total order value in the order details
+      totalOrderValue,
+      
     };
-    console.log(orderDetails)
 
-    // Make a post request to the server API with the order details
+    //  API call with the order details to add to cart
     axios
-      .post('https://street-bites-api.onrender.com/cart', orderDetails)
+      .post(`${BACKEND_API}/cart`, orderDetails,{
+        headers: {
+          "Authorization" : `Bearer ${user?.email}`
+        }
+      })
       .then((response) => {
-        onClose(); // Close the modal after adding to cart
-        alert('Added to the Cart successfully');
+        onClose(); 
+        alert("Added to the Cart successfully");
+        dispatch(getCartItem(user))
+        console.log(response?"Dish Added to Cart":"")
       })
       .catch((error) => {
-        console.error('Error placing order:', error);
-        onClose(); // Close the modal in case of an error
+        console.error("Error placing order:", error.message);
+        onClose(); 
       });
   };
-
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -94,7 +109,7 @@ import {
               </NumberInputStepper>
             </NumberInput>
           </FormControl>
-          <p style={{ marginTop: '1rem' }}>
+          <p style={{ marginTop: "1rem" }}>
             Total Price: ₹{calculatePriceTotal().toFixed(2)}
           </p>
         </ModalBody>

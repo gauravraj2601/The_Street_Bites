@@ -1,37 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, {  useRef } from "react";
 import styled from "styled-components";
-import Loading from "./Loading";
+import Loading from "../Loading/Loading";
 import DishCardSlider from "./DishCardSlider";
-import { AppContext } from "../Context/ContextProvider";
+import { useSelector } from "react-redux";
 
-const DishSlider = () => {
-  
+const DishSlider = ({data}) => {
+  const loading = useSelector((store)=>store.menuReducer.isLoading)
   const scrollContainerRef = useRef(null);
-  const {data, loading}= useContext(AppContext);
-  /**
-   import axios from "axios";
-   import BACKEND_API from "../API/api";
-  const [data, setData] = useState([]);
-   
-  const fetchData = () => {
-      // setLoading(true);
-      axios
-        .get(`${BACKEND_API}/menu`)
-      .then((res) => {
-        setData(res.data.menuList);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  console.log(data)
-  */
-
 
   const scroll = (scrollOffset) => {
     if (scrollContainerRef.current) {

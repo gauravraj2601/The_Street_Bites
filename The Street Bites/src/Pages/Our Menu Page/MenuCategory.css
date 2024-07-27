@@ -7,7 +7,7 @@
 } */
 .container{
   color:white;
-  background-image: url('../Images/bg_4.jpg');
+  background-image: url('../../Images/bg_4.jpg');
   background-size: cover; 
   background-repeat: repeat; 
   width: 100%;

@@ -9,6 +9,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import flag from "../Images/flag.png";
 import styled from "styled-components";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
+import BACKEND_API from "../API/api";
+import { useSelector } from "react-redux";
 
 const NAV = styled.div`
   #hamBug {
@@ -38,26 +40,31 @@ const NAV = styled.div`
 `;
 const Navbar = () => {
   const navigate = useNavigate();
-  const [cartItems, setCartItems] = useState([]);
   const [showHam, setShowHam] = useState(false);
   const [showProfile, setShowprofile] = useState(false);
-  const { loginWithRedirect, logout, user, isAuthenticated, getIdTokenClaims, isLoading } =
+  const { loginWithRedirect, logout, user, isAuthenticated, getIdTokenClaims } =
     useAuth0();
 
+   const cartItems= useSelector((store)=>store.cartReducer.cartItems);
 
+// console.log(cartItems)
     useEffect(() => {
       const fetchUserData = async () => {
-        const token = await getIdTokenClaims();
-        if (isAuthenticated && user) {
-          const response = await axios.post(`http://localhost:8000/user/auth`, {
-            name: user.name,
-            email: user.email,
-            picture: user.picture,
-          });
-          // alert("auth")
-          console.log(response?"getting-response":"response-fail")
+        try {
+          if (isAuthenticated && user) {
+            const response = await axios.post(`${BACKEND_API}/user/auth`, {
+              name: user.name,
+              email: user.email,
+              picture: user.picture,
+            });
+            
+            console.log(response ? "user-response-successful" : "user-response-fail");
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error.message);
         }
       };
+    
   
       fetchUserData();
     }, [isAuthenticated, user, getIdTokenClaims]);
@@ -72,6 +79,9 @@ const Navbar = () => {
         style={{
           display: "flex",
           width: "100%",
+          // position: "sticky",
+          // zIndex:"1",
+          // top:"0px",
           backgroundColor: "#121618",
           justifyContent: "space-between",
         }}
@@ -131,7 +141,7 @@ const Navbar = () => {
           <div style={{ position: "relative" }}>
             <Tooltip
               label={`Total Items: ${
-                cartItems.length > 1 ? cartItems.length - 1 : 0
+                cartItems.length > 0 ? cartItems.length : 0
               }`}
               placement="top"
             >
@@ -159,7 +169,7 @@ const Navbar = () => {
                 fontSize: "12px",
               }}
             >
-              {cartItems.length > 1 ? cartItems.length - 1 : 0}
+              {cartItems.length > 0 ? cartItems.length  : 0}
             </div>
           </div>
 

@@ -1,11 +1,12 @@
 import React from "react";
 import { FaPhone } from "react-icons/fa";
 import "./MenuCard.css";
-import menu1 from "../Images/menu1.png";
-import menu2 from "../Images/menu2.png";
-import menu3 from "../Images/menu3.png";
-import menu4 from "../Images/menu4.png";
+import menu1 from "../../Images/menu1.png";
+import menu2 from "../../Images/menu2.png";
+import menu3 from "../../Images/menu3.png";
+import menu4 from "../../Images/menu4.png";
 
+// Menu Page for showing Menu Card
 const MenuCard = () => {
   return (
     <div

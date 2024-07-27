@@ -8,7 +8,7 @@ import {
   Input,
   Checkbox,
   Stack,
-  Link,
+  
   Button,
   Heading,
   Text,
@@ -33,8 +33,8 @@ export default function Signin() {
     try {
       const response = await axios.post(`${BACKEND_API}/user/register`, userDetails);
       const data = response.data;
-      console.log(data);
-      resetFields(); // Reset input fields after successful signup   https://nearbuy-mock-server.onrender.com/users
+      // console.log(data);
+      resetFields(); // Reset input fields after successful signup  
       alert("Account Created Successfully");
       navigate("/");
     } catch (error) {
@@ -52,7 +52,7 @@ export default function Signin() {
     setEmail("");
     setPassword("");
   };
-console.log(email, password)
+// console.log(email, password)
   return (
     
     <Flex

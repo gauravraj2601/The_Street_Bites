@@ -7,7 +7,7 @@ const CartBox = ({ item, onDelete }) => {
   return (
     <>
     
-    <div style={{display:"flex"}}>
+    <div style={{display:"flex", marginTop:"8px", borderBottom:"2px solid white", borderRadius:"5px"}}>
 
     <div style={{width:"80%", margin:"auto", display:"flex", gap:"20px"}}>
 

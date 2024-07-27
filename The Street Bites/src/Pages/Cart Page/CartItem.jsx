@@ -1,33 +1,25 @@
-import React, { useEffect, useState } from "react";
-import CartBox from "../Components/CartBox";
+import React, {  useEffect, useState } from "react";
+import CartBox from "../../Components/CartItemBox";
 import "./CartItem.css";
-import Loading from "../Components/Loading";
-import axios from "axios";
-import PaymentModule from "../Components/PaymentMofule";
+import Loading from "../../Components/Loading/Loading";
+import PaymentModule from "../../Components/PaymentMofule";
+import { useAuth0 } from '@auth0/auth0-react';
+import { useDispatch, useSelector } from "react-redux";
+import { getCartItem, removeFromCart } from "../../Redux/Cart/action";
 
 const CartItem = () => {
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+
+  const {  user } = useAuth0();
+  const cartItems= useSelector((store)=>store.cartReducer.cartItems);
+  const loading= useSelector((store)=>store.cartReducer.isLoading);
   const [grandTotal, setGrandTotal] = useState(0);
   const [filtered, setFiltered] = useState([]);
 
-  const fetchCartItems = () => {
-    setLoading(true);
-    axios
-      .get("https://street-bites-api.onrender.com/cart")
-      .then((response) => {
-        setCartItems(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    fetchCartItems();
-  }, []);
+  const dispatch = useDispatch();
+  
+  const handleDelete = (id) => {
+  dispatch(removeFromCart(id,user))
+}
 
   useEffect(() => {
     const filterData = cartItems?.filter((el) => el.id !== 1);
@@ -39,21 +31,12 @@ const CartItem = () => {
     const total = cartItems.reduce((acc, el) => acc + el.totalOrderValue, 0);
     setGrandTotal(total);
   }, [cartItems]); // Dependency array with cartItems
-
-  const handleDelete = (id) => {
-    // Send delete request to the API
-    axios
-      .delete(`https://street-bites-api.onrender.com/cart/${id}`)
-      .then((response) => {
-        // Filter out the deleted item from the cartItems state
-        setCartItems((prevCartItems) =>
-          prevCartItems.filter((item) => item.id !== id)
-        );
-      })
-      .catch((error) => {
-        console.error("Error deleting item:", error);
-      });
-  };
+  
+  useEffect(()=>{
+    dispatch(getCartItem(user))
+  },[])
+  // console.log("email user",user?.email)
+ 
 
   return (
     <div className="container">
@@ -72,8 +55,8 @@ const CartItem = () => {
         {loading ? (
           <Loading />
         ) : (
-          filtered?.map((el) => {
-            return <CartBox key={el.id} item={el} onDelete={() => handleDelete(el.id)} />;
+          filtered?.map((el, index) => {
+            return <CartBox key={index+1} item={el} onDelete={() => handleDelete(el._id)} />;
           })
         )}
       </div>
@@ -105,7 +88,7 @@ const CartItem = () => {
        {/* Render the PaymentModule component and pass cartItems and setCartItems as props */}
        <div style={{width:"80%",margin:"auto",display:"flex", justifyContent:"end"}}>
 
-       <PaymentModule cartItems={cartItems} setCartItems={setCartItems} setFiltered={setFiltered} />
+       <PaymentModule cartItems={cartItems} setCartItems={"setCartItems"} setFiltered={setFiltered} />
        </div>
     </div>
   
