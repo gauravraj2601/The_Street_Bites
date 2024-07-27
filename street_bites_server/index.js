@@ -3,6 +3,7 @@ const cors= require("cors");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/user.route");
 const { menuRouter } = require("./routes/menu.route");
+const { cartRouter } = require("./routes/cart.route");
 // const { auth } = require('express-openid-connect');
 // const { config } = require("./config/auth0Config");
 // const { authCallback } = require("./controller/auth.controller");
@@ -20,6 +21,7 @@ app.use(cors())
 
 app.use("/user",userRouter)
 app.use("/menu", menuRouter)
+app.use("/cart", cartRouter)
 app.get("/",(req,res)=>{
     res.send("Welcome to The Street Bites Server")
 })
