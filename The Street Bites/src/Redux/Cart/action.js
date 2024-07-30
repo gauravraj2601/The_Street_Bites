@@ -3,8 +3,12 @@ import { GETCART_REJ, GETCART_REQ, GETCART_SUCCESS, REMOVE_DISH }  from "./actio
 import BACKEND_API from "../../API/api";
 
 export const getCartItem = (user) => (dispatch) =>{
-    
-    // console.log(user)
+ 
+    if(!user){
+      console.log("User needs to Log In to show cart")
+      return
+    }
+   
     dispatch({type: GETCART_REQ});
             axios
           .get( `${BACKEND_API}/cart`,{

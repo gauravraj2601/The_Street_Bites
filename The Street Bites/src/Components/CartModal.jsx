@@ -40,6 +40,17 @@ const CartModal = ({ isOpen, onClose, dishName, prices, category, image }) => {
   };
   const handleAddToCart = () => {
     // Calculate the total order value
+    if(!user){
+      console.log("User should logged in first to add to cart") 
+      alert("Log In First to add")
+      onClose(); 
+      return
+    }
+
+    if(fullPortionQuantity === 0 && halfPortionQuantity === 0){
+        alert("Add Portion")
+        return
+    }
     const totalOrderValue = calculatePriceTotal();
 
     // Prepare the order details to send in the POST request

@@ -52,6 +52,8 @@ const CartItem = () => {
         <h1 style={{ fontSize: "20px", fontWeight: "700", color: "#ffd12e" }}>
           Cart
         </h1>
+        {!user && <h2 style={{padding:"20px"}}>User have to Log In first to add Dishes</h2> }
+        
         {loading ? (
           <Loading />
         ) : (
