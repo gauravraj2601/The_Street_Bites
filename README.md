@@ -21,6 +21,9 @@
 ### 5. Google Auth0 Integration 
 - We have integrated Google Auth0 to provide a seamless and secure login experience. Users can now log in using their Google accounts, enhancing the overall user experience and security. This integration allows us to authenticate users, manage sessions, and protect user data efficiently.
 
+### 6. Redux for State Management
+- We use Redux for state management in The Street Bites. Redux helps us manage the state of our application in a predictable way, making it easier to handle complex state interactions and ensuring the application remains maintainable and scalable. We have integrated Redux with React-Redux and created a store to manage the state of cart items, menu, user data, and more.
+
 ## Installation Process
 To set up the project locally, follow these steps:
 
