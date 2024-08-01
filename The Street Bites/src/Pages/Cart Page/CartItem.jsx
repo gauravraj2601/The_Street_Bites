@@ -22,7 +22,7 @@ const CartItem = () => {
 }
 
   useEffect(() => {
-    const filterData = cartItems?.filter((el) => el.id !== 1);
+    const filterData = cartItems?.filter((el) => el._id !== 1);
     setFiltered(filterData || []); // Initialize with an empty array if filterData is null or undefined
   }, [cartItems]);
 
@@ -90,7 +90,7 @@ const CartItem = () => {
        {/* Render the PaymentModule component and pass cartItems and setCartItems as props */}
        <div style={{width:"80%",margin:"auto",display:"flex", justifyContent:"end"}}>
 
-       <PaymentModule cartItems={cartItems} setCartItems={"setCartItems"} setFiltered={setFiltered} />
+       <PaymentModule setFiltered={setFiltered} />
        </div>
     </div>
   
