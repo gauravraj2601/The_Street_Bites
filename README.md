@@ -18,11 +18,18 @@
 ### 4. Contact Us
 - Have questions or need assistance? The Contact Us Page provides all the information you need to get in touch with The Street Bites. From email addresses to phone numbers, our contact details are readily available, ensuring you can reach us whenever you need support or want to share feedback.
 
-### 5. Google Auth0 Integration 
+## Additional Features
+### Google Auth0 Integration 
 - We have integrated Google Auth0 to provide a seamless and secure login experience. Users can now log in using their Google accounts, enhancing the overall user experience and security. This integration allows us to authenticate users, manage sessions, and protect user data efficiently.
 
-### 6. Redux for State Management
+### Redux for State Management
 - We use Redux for state management in The Street Bites. Redux helps us manage the state of our application in a predictable way, making it easier to handle complex state interactions and ensuring the application remains maintainable and scalable. We have integrated Redux with React-Redux and created a store to manage the state of cart items, menu, user data, and more.
+
+### Backend Integration
+- Our project includes a robust backend built using Node.js and Express.js to handle various functionalities such as user authentication, managing cart items, menu items, processing orders, and more.
+- We use MongoDB as our database to store user data, menu items, order details, and cart information.
+- The backend APIs are deployed on Render, ensuring scalability and reliability.
+
 
 ## Installation Process
 To set up the project locally, follow these steps:
@@ -54,3 +61,17 @@ To set up the project locally, follow these steps:
 - Contact Us: Reach out to us using the contact details provided if you have any inquiries, suggestions, or feedback.
 - Google Auth0 integration: Log in using your Google account for a seamless and secure experience.
 Enjoy the culinary journey with The Street Bites!
+
+## Backend API
+- Get Menu Items: Fetch the list of all available menu items.
+- User Authentication: Handle user sign-up, login, and logout processes securely using Auth0.
+- Cart Management: Add items to the cart, view cart items, and remove items from the cart.
+- Order Processing: Place orders and handle payment processing.
+
+## Technologies Used
+- Frontend: React, Redux, Chakra UI, React Router, Axios
+- Backend: Node.js, Express.js, MongoDB
+- Authentication: Auth0
+- Deployment: Vercel (Frontend), Render (Backend)
+Enjoy the culinary journey with The Street Bites!
+
