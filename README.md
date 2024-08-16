@@ -1,7 +1,7 @@
 # The Street Bites
 
 ![The Street Bites Logo](https://github.com/gauravraj2601/The_Street_Bites/assets/123883332/a9f34db6-5478-4099-9f5e-2bbbd8a66c78)
-## Deployed Link : [https://elctronix-express-k74afyg3e-ganeshgourav.vercel.app](https://the-street-bites.vercel.app/)
+## Deployed Link : [https://the-street-bites.vercel.app/]
 - Welcome to The Street Bites, your go-to online food ordering platform for a diverse range of local culinary delights. Inspired by popular services like Uber Eats and Grubhub, we strive to connect hungry users with a variety of delectable food options, offering a seamless and convenient dining experience.
 
 ![The Street Bites](https://github.com/gauravraj2601/ruthless-store-61/assets/123883332/1a0f372d-da62-41b4-847f-24d0d9c9b83e)
@@ -74,4 +74,8 @@ Enjoy the culinary journey with The Street Bites!
 - Authentication: Auth0
 - Deployment: Vercel (Frontend), Render (Backend)
 Enjoy the culinary journey with The Street Bites!
+
+## Responsiveness : Devices 
+![Untitled_design__2_-removebg](https://github.com/user-attachments/assets/b84b9e71-ac13-4eb3-a1c2-4d32c4218fef)
+
 
