@@ -5,6 +5,13 @@
 - Welcome to The Street Bites, your go-to online food ordering platform for a diverse range of local culinary delights. Inspired by popular services like Uber Eats and Grubhub, we strive to connect hungry users with a variety of delectable food options, offering a seamless and convenient dining experience.
 
 ![The Street Bites](https://github.com/gauravraj2601/ruthless-store-61/assets/123883332/1a0f372d-da62-41b4-847f-24d0d9c9b83e)
+
+### Demonstration Video
+
+https://github.com/user-attachments/assets/67a4735b-1e93-42e7-89d7-76d65303578e
+
+Watch the demonstration of The Street Bites [here](https://youtu.be/EWTujmrvFJo).
+
 ## Sections
 ### 1. Home Page
 - The Home Page serves as the gateway to a world of culinary delights. Here, you can explore a comprehensive list of all the mouth-watering menu items available on The Street Bites. From savory dishes to sweet treats, we've got your cravings covered.
