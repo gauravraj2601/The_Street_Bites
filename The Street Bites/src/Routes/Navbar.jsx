@@ -13,14 +13,30 @@ import BACKEND_API from "../API/api";
 import { useSelector } from "react-redux";
 
 const NAV = styled.div`
+position: sticky;
+          z-index:1;
+          top:0px;
   #hamBug {
     display: none;
   }
   #flag-image {
-    width: 100px;
-    height: 77px;
+    width: 90px;
+    height: 50px;
     margin: 10px 0 0 -13px;
   }
+  #image-logo {
+      width: 120px;
+      height: 67px;
+    }
+   #sign{
+      width: 80px;
+      height: 35px;
+      background-color:#ab6d1b ;
+      color: white;
+      border-radius: 15px;
+      font-weight: 700;
+   }
+   
 
   @media (max-width: 768px) {
     .link {
@@ -34,7 +50,12 @@ const NAV = styled.div`
     }
     #flag-image {
       width: 70px;
-      height: 57px;
+      height: 50px;
+    }
+    #sign{
+      width: 60px;
+      height: 30px;
+      font-size: 14px;
     }
   }
 `;
@@ -79,9 +100,6 @@ const Navbar = () => {
         style={{
           display: "flex",
           width: "100%",
-          // position: "sticky",
-          // zIndex:"1",
-          // top:"0px",
           backgroundColor: "#121618",
           justifyContent: "space-between",
         }}
@@ -195,14 +213,6 @@ const Navbar = () => {
             ) : (
               <button
                 id="sign"
-                style={{
-                  width: "80px",
-                  height: "35px",
-                  backgroundColor: "#ab6d1b",
-                  color: "white",
-                  borderRadius: "15px",
-                  fontWeight: "700",
-                }}
                 onClick={() => loginWithRedirect()}
               >
                 Log In
