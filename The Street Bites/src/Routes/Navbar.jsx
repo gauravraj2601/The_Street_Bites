@@ -196,19 +196,10 @@ const Navbar = () => {
           <div>
             {isAuthenticated ? (
               <button
-                id="sign"
-                style={{
-                
-                  backgroundColor: "#ab6d1b",
-                  borderRadius: "50%",
-                  color: "white",
-                
-                  fontWeight: "700",
-                }}
                 onClick={() => setShowprofile((prev) => !prev)}
               >
            
-                <img style={{ width: "40px", borderRadius:"10px" }} src={user.picture} alt="imag" />
+                <img style={{ width: "40px", borderRadius:"10px", backgroundColor:"#b58545" }} src={user.picture} alt="imag" />
               </button>
             ) : (
               <button
@@ -222,7 +213,7 @@ const Navbar = () => {
               <div
                 style={{
                   position: "absolute",
-                  top: "100px",
+                  top: "70px",
                   right: "-45px",
                   width: "auto",
                   display: "flex",
@@ -240,7 +231,7 @@ const Navbar = () => {
                   style={{
                     listStyleType: "none",
                     textAlign: "center",
-                    padding: "5px",
+                    padding: "5px 18px 5px 18px" ,
                    
                   }}
                 >
